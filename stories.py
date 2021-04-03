@@ -18,9 +18,10 @@ class Story:
         'I love to eat a good mango.'
     """
 
-    def __init__(self, words, text):
+    def __init__(self, name, words, text):
         """Create story with words and template text."""
 
+        self.story_name = name
         self.prompts = words
         self.template = text
 
@@ -37,7 +38,11 @@ class Story:
 
 # Here's a story to get you started
 story = Story(
+    'Sample Template',
     ["place", "noun", "verb", "adjective", "plural_noun"],
     """Once upon a time in a long-ago {place}, there lived a
     large {adjective} {noun}. It loved to {verb} {plural_noun}."""
 )
+
+stories = {story}
+

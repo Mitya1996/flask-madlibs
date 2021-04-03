@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}Madlibs{% endblock %}
+{% block title %}Questions{% endblock %}
 
 {% block content %}
 
     <h1>Madlibs</h1>
-    <form action="/story">
+    <form action="/story/{{story_name}}">
         {% for blank in blanks %}
         <div>
             <label for="{{blank}}">{{blank.capitalize()}}:</label>

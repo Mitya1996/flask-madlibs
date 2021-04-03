@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<h1>View Story</h1>
+
+<form action="/questions">
+    <label for="stories-choice">Stories:</label>
+
+    <select name="stories-choice">
+    {% for name in names %}
+    <option value="{{name}}">{{name}}</option>
+    {% endfor %}
+    </select>
+
+    <button>View</button>
+</form>
+<h1>Create Story</h1>
+<p>Rules: </p>
+<form action="/newstory" id="newstory">
+    <label for="title">Title</label>
+    <input type="text" name="title">
+    <br>
+    <br>
+    <label for="prompts">Prompts</label>
+    <br>
+    <textarea form="newstory" name="prompts" cols="30" rows="10"></textarea>
+    <br>
+    <label for="template">Template</label>
+    <br>
+    <textarea form="newstory" name="template" cols="30" rows="10"></textarea>
+    <br>
+    <button>Submit</button>
+</form>
+
+{% endblock %}
